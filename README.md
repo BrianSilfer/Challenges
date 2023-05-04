@@ -1,1 +1,15 @@
-# Challenges
+# Drug Treatment Analysis
+
+For this challenge, I was tasked with analyzing SCC tumor data among mice in an animal study. Mice were separated into groups based on the drug treatment that was administered to them. My analysis started with cleaning the data set of duplicate values. This involved searching through the Mouse IDs to find duplicates. One was found because there was one mouse that had more than 10-time points associated with its mouse ID in the dataset. That duplicate value was found at index 908 or mouse g989. Once found, the duplicate row was deleted.
+
+Next, I created a summary statistics table of the mouse data grouped by drug treatment regimen. This table included the mean, median, variance, standard deviation, and standard error of the mouse data grouped by drug regimen. As a bonus I created a more efficient way of calculating this same summary table using the .agg method. I additionally added the count column to the summary statistics table so I could utilize it in the next section of my analysis.
+
+I then created two bar charts, one utilizing the built-in panda's data frame. plot() function as well as using pyplot. This bar chart displays the total number of mice per drug regimen, with Capomulin and Ramicane having the largest number of mice out of all of the drug regimen groups. Next, I created two pie charts using the same two methods. These plots showed the distribution of male-to-female mice within the study. After creating these charts, it was shown that 50.6% of the mice were male and 49.4% of the mice were female.
+
+To further analyze this dataset, I dug deeper into the data to show the tumor volume for the last time point of the four drug regimen groups, Capomulin, Ramicane, Infubinol, and Ceftamin. This data was then used to create quartiles and an interquartile range. These values were then used to find the upper and lower bounds of the data. This allowed for the analysis of possible outliers in the new dataset for each of the four drug treatment regimens. After analyzing the upper and lower bounds compared to the tumor volumes for each drug regimen, no outliers were found.
+
+Next, I plotted the tumor volumes of mice in the capomulin group throughout 10 time points. The plot clearly shows a decreasing trend in tumor volume over time. This would suggest that capomulin is an effective treatment for SCC as the tumor volume decreases significantly. After that, I created a scatter plot to show the mouse weight versus the tumor volume of the capomulin group. This plot displayed a clear linear correlation, which was supported by the correlation coefficient which was calculated to be 0.84. This shows a very strong correlation between these two variables. This point was driven home by the line of best fit which was calculated and displayed over the scatter plot.
+
+The analysis of the pharmaceutical data would be useful to a pharmaceutical team, looking to gain knowledge about which drug treatments are most effective at reducing SCC tumor sizes. Capomulin, with a correlation coefficient of 0.84, would be a strong candidate for treating SCC on a larger scale. 
+
+
